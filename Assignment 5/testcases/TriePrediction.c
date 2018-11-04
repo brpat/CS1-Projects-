@@ -78,7 +78,7 @@ void InsertString(TrieNode **root, char *str)
 		index = tolower(str[i]) - 'a';
 		
 		if(tmp->children[index] == NULL)
-				tmp->children[index] = createTrieNode();	
+			tmp->children[index] = createTrieNode();	
 		
 		tmp = tmp->children[index];
 		i++;
@@ -130,7 +130,7 @@ TrieNode *buildTrie(char *filename)
 		InsertString(&t, hold);
 
 	   if(firstWord != true)
-				InsertString(&tmp->subtrie, hold);
+			InsertString(&tmp->subtrie, hold);
 		// if there is only one word in the sentence
 	   if(firstWord == true && end == true)
 			{
@@ -169,7 +169,7 @@ int processInputFile(TrieNode *root, char *filename)
 	while(fscanf(fp, " %s", buffer) != EOF)
 	{
 		if(strcmp(buffer, "!") == 0)
-				printTrie(root, 0);
+			printTrie(root, 0);
 
 		else if(buffer[0] == '@')
 		{
